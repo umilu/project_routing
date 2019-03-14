@@ -1,4 +1,9 @@
-function routing(homePage, portfolioPage, resumePage, contactPage) {
+import homePage from "./sites/homePage.js";
+import portfolioPage from "./sites/portfolioPage.js";
+import resumePage from "./sites/resumePage.js";
+import contactPage from "./sites/contactPage.js";
+
+function routing() {
 
     const pages = {
         home: homePage,
@@ -26,8 +31,7 @@ function routing(homePage, portfolioPage, resumePage, contactPage) {
         let page = pages[noHash];
         if (current !== url) {
             url = current;
-            if (noHash) {
-            } else {
+            if (!noHash) {
                 navigate('home');
                 current = getCurrent();
                 noHash = current.slice(1);
